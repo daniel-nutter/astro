@@ -26,7 +26,7 @@
         "start.stencil": "stencil build --dev --watch --serve",
         "start.storybook": "start-storybook -p 6006",
         "start": "concurrently npm:start.stencil npm:start.storybook",
-        "test": "start-server-and-test ci.server 3333 test.all",
+        "test": "karma start",
         "test.e2e.run": "cypress run",
         "test.e2e.watch": "cypress open",
         "ci.server": "http-server www -p 3333 -c-1 --silent",
@@ -36,7 +36,11 @@
         "test.unit.silent": "TZ=UTC stencil test --spec --coverage, --silent",
         "test.all": "concurrently npm:test.unit.silent npm:test.e2e",
         "deploy.beta": "netlify deploy --site '27100b54-2df5-4ab2-a331-4ef2b81f8054'",
-        "deploy.storybook": "netlify deploy --site 'bfaf1790-0a59-47fb-ab34-4a3530a715f1'"
+        "deploy.storybook": "netlify deploy --site 'bfaf1790-0a59-47fb-ab34-4a3530a715f1'",
+        "test:watch": "karma start --auto-watch=true --single-run=false",
+        "test:es5": "karma start karma.es5.config.js",
+        "test:es5:watch": "karma start karma.es5.config.js --auto-watch=true --single-run=false",
+        "test:es5:bs": "karma start karma.es5.bs.config.js"
     },
     "dependencies": {
         "@stencil/core": "~2.5.2",
@@ -49,6 +53,9 @@
         "@astrouxds/design-tokens": "~1.5.0",
         "@astrouxds/storybook-addon-docs-stencil": "~1.0.10",
         "@babel/core": "~7.13.16",
+        "@open-wc/testing": "^0.9.0",
+        "@open-wc/testing-karma": "^0.4.0",
+        "@open-wc/testing-karma-bs": "^0.2.0",
         "@stencil/angular-output-target": "~0.2.1",
         "@stencil/eslint-plugin": "~0.4.0",
         "@stencil/react-output-target": "~0.1.0",
@@ -75,6 +82,7 @@
         "eslint-config-google": "~0.14.0",
         "eslint-plugin-react": "~7.23.2",
         "http-server": "~13.0.2",
+        "istanbul-instrumenter-loader": "~3.0.1",
         "jest": "~26.6.3",
         "jest-cli": "~26.6.3",
         "lit": "~2.0.0-rc.3",
@@ -88,6 +96,7 @@
         "stylelint-config-prettier": "~8.0.2",
         "stylelint-config-standard": "~22.0.0",
         "svgo": "~2.3.0",
-        "wait-on": "~6.0.0"
+        "wait-on": "~6.0.0",
+        "webpack-merge": "^4.1.5"
     }
 }
