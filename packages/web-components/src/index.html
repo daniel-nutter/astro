@@ -1,23 +1,648 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8"/>
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-        />
+/>
         <title>Stencil Component Starter</title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
             rel="stylesheet"
-        />
+/>
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
 
-        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <link rel="stylesheet" href="/build/astro-web-components.css"/>
+        <style>
+            ul {
+                list-style: none;
+            }
+            .full {
+                grid-column: 1 / -1;
+            }
+            :root {
+                --grid-cols: 3;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(var(--grid-cols), 1fr);
+            }
+        </style>
     </head>
 
-    <body></body>
+        <body>
+            <ul style="list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                <li>
+                    <rux-accordion>
+                        <rux-accordion-item>
+                            <div slot="label">Title 1</div>
+                            <p>Content 1</p>
+                        </rux-accordion-item>
+                        <rux-accordion-item>
+                            <div slot="label">Title 2</div>
+                            <p>Content 2</p>
+                        </rux-accordion-item>
+                        <rux-accordion-item>
+                            <div slot="label">Title 3</div>
+                            <p>Content 3</p>
+                        </rux-accordion-item>
+                    </rux-accordion>
+                </li>
+
+                <li>
+                    <rux-button size="small">Small button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" icon="settings"
+                    >Small button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button size="small" disabled=""
+                    >Small disabled button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button size="small" disabled="" icon="settings"
+                    >Small disabled button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button size="small" secondary=""
+                    >Small secondary button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button size="small" secondary="" icon="settings"
+                    >Small secondary button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button size="small" secondary="" disabled=""
+                    >Small disabled secondary button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button
+                    size="small"
+                    secondary=""
+                    disabled=""
+                    icon="settings"
+                    >Small disabled secondary button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button>Medium button</rux-button>
+                </li>
+                <li>
+                    <rux-button icon="settings">Medium button with icon</rux-button>
+                </li>
+
+                <li>
+                    <rux-button disabled="">Medium disabled button</rux-button>
+                </li>
+                <li>
+                    <rux-button disabled="" icon="settings"
+                    >Medium disabled button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button secondary="">Medium secondary button</rux-button>
+                </li>
+                <li>
+                    <rux-button secondary="" icon="settings"
+                    >Medium secondary button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button secondary="" disabled=""
+                    >Medium disabled secondary button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button secondary="" disabled="" icon="settings"
+                    >Medium disabled secondary button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button size="large">Large button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" icon="settings"
+                    >Large button with icon</rux-button
+                >
+                </li>
+
+                <li>
+                    <rux-button size="large" disabled=""
+                    >Large disabled button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button size="large" disabled="" icon="settings"
+                    >Large disabled button with icon</rux-button
+                >
+                </li>
+                <li></li>
+                <li>
+                    <rux-button size="large" secondary=""
+                    >Large secondary button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button size="large" secondary="" icon="settings"
+                    >Large secondary button with icon</rux-button
+                >
+                </li>
+                <li>
+                    <ul style="--grid-cols: 8" class="grid">
+                        <li>
+                            <rux-button icon-only icon="settings" borderless></rux-button>
+                        </li>
+                        <li>
+                            <rux-button icon-only="" icon="settings" borderless="" disabled=""></rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="small" icon-only="" icon="settings">Small icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="small" icon-only="" disabled="" icon="settings">Small disabled icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="small" icon-only="" secondary="" icon="settings">Small secondary icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="small" icon-only="" disabled="" secondary="" icon="settings">Small disabled secondary icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button icon-only="" icon="settings">Medium icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button icon-only="" disabled="" icon="settings">Medium disabled icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button icon-only="" secondary="" icon="settings">Medium secondary icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button icon-only="" disabled="" secondary="" icon="settings">Medium disabled secondary icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="large" icon-only="" icon="settings">Large icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="large" icon-only="" disabled="" icon="settings">Large disabled icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="large" icon-only="" secondary="" icon="settings">Large secondary icon-only button</rux-button>
+                        </li>
+                        <li>
+                            <rux-button size="large" icon-only="" disabled="" secondary="" icon="settings">Large disabled secondary icon-only button</rux-button>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <rux-button size="large" secondary="" disabled=""
+                    >Large disabled secondary button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button
+                    size="large"
+                    secondary=""
+                    disabled=""
+                    icon="settings"
+                    >Large disabled secondary button with icon</rux-button
+                >
+                </li>
+                <li></li>
+                <li>
+                    <rux-button borderless="">Borderless button</rux-button>
+                </li>
+                <li>
+                    <rux-button borderless="" icon="settings"
+                    >Borderless button with icon</rux-button
+                >
+                </li>
+                <li></li>
+                <li>
+                    <rux-button borderless="" disabled=""
+                    >Disabled borderless button</rux-button
+                >
+                </li>
+                <li>
+                    <rux-button borderless="" icon="settings" disabled=""
+                    >Disabled borderless button with icon</rux-button
+                >
+                </li>
+                <li>
+                    <rux-card style="width: 300px; margin: auto">
+                        <div
+                        slot="header"
+                        style="display: flex; align-items: center"
+                    >
+                            <rux-icon
+                            icon="star"
+                            size="26px"
+                            style="margin-right: 10px"
+                        ></rux-icon>
+                        Card Title
+                        <rux-icon
+                            icon="menu"
+                            size="26px"
+                            style="margin-left: auto"
+                        ></rux-icon>
+                        </div>
+                        <div
+                        style="
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                            display: flex;
+                            justify-content: center;
+                        "
+                    >
+                            <svg
+                            width="140"
+                            height="140"
+                            viewBox="0 0 140 140"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                                <path
+                                d="M139.65 70C139.65 108.467 108.467 139.65 70 139.65C31.5334 139.65 0.35 108.467 0.35 70C0.35 31.5334 31.5334 0.35 70 0.35C108.467 0.35 139.65 31.5334 139.65 70Z"
+                                stroke="black"
+                                stroke-width="0.7"
+                            ></path>
+                                <circle
+                                cx="70"
+                                cy="70"
+                                r="41.65"
+                                stroke="black"
+                                stroke-width="0.7"
+                            ></circle>
+                                <path
+                                d="M69.3044 28L69.3044 0.700024C109.605 0.700026 139.3 32.2 139.3 70.7L112.002 70.7C112.002 45.5 92.4029 28 69.3044 28Z"
+                                fill="#AEA8E5"
+                            ></path>
+                                <path
+                                d="M69.3044 112L69.3044 139.3C109.605 139.3 139.3 107.45 139.3 70.7L112.002 70.7C111.302 93.45 92.7529 112 69.3044 112Z"
+                                fill="#938BDB"
+                            ></path>
+                                <path
+                                d="M69.3044 28L69.3044 0.702855C30.8085 0.349326 0.00881784 33.6 0.711748 70.7L27.9982 70.7C27.9982 45.85 47.597 28.35 69.3044 28Z"
+                                fill="#302C54"
+                            ></path>
+                                <path
+                                d="M69.3044 112L69.3044 139.3C30.1086 139.3 0.361846 106.75 0.711796 70.7L27.9982 70.7C28.6963 94.15 47.247 111.65 69.3044 112Z"
+                                fill="#6058A8"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div
+                        slot="footer"
+                        style="justify-content: center; display: flex"
+                    >
+                            <rux-button size="small">Primary button</rux-button>
+                        </div>
+                    </rux-card>
+                </li>
+                <li>
+                    <ul class="grid" style="--grid-cols: 8;">
+                        <li>
+                            <rux-classification-marking
+                            tag=""
+                            classification="top-secret-sci"
+                        ></rux-classification-marking>
+                        </li>
+                        <li>
+                            <rux-classification-marking tag classification="top-secret"></rux-classification-marking>
+                        </li>
+                        <li>
+                            <rux-classification-marking
+                    tag
+                    classification="secret"
+                ></rux-classification-marking>
+                        </li>
+                        <li>
+                            <rux-classification-marking
+                    tag=""
+                    classification="confidential"
+                ></rux-classification-marking>
+                        </li>
+                        <li>
+                            <rux-classification-marking
+                    tag=""
+                    classification="controlled"
+                ></rux-classification-marking>
+                        </li>
+                        <li>
+                            <rux-classification-marking
+                    tag=""
+                    classification="cui"
+                ></rux-classification-marking>
+                        </li>
+                        <li>
+                            <rux-classification-marking
+                    tag=""
+                    classification="unclassified"
+                ></rux-classification-marking>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="full">
+                    <rux-classification-marking classification="top-secret-sci"></rux-classification-marking>
+                </li>
+                <li class="full">
+                    <rux-classification-marking classification="top-secret"></rux-classification-marking>
+                </li>
+                <li class="full">
+                    <rux-classification-marking classification="secret"></rux-classification-marking>
+                </li>
+                <li class="full">
+                    <rux-classification-marking classification="confidential"></rux-classification-marking>
+                </li class="full">
+                <li class="full">
+                    <rux-classification-marking classification="controlled"></rux-classification-marking>
+                </li>
+                <li class="full">
+                    <rux-classification-marking classification="cui"></rux-classification-marking>
+                </li>
+                <li class="full">
+                    <rux-classification-marking classification="unclassified"></rux-classification-marking>
+                </li>
+                <li>
+                    <rux-clock hide-date=""></rux-clock>
+                </li>
+                <li>
+                    <rux-clock hide-labels=""></rux-clock>
+                </li>
+                <li>
+                    <rux-clock hide-timezone=""></rux-clock>
+                </li>
+                <li>
+                    <rux-container style="--body-padding: 0;">
+                        <div slot="header">Parent container title</div>
+                        <div slot="tab-bar">
+                            <rux-tabs id="tab-set-id-2" small="">
+                                <rux-tab id="tab-id-4">Tab 1</rux-tab>
+                                <rux-tab id="tab-id-5">Tab 2</rux-tab>
+                                <rux-tab id="tab-id-6" disabled="">
+                        Tab 3 (disabled)
+                    </rux-tab>
+                            </rux-tabs>
+                        </div>
+                        <div slot="toolbar">
+                            <rux-slider></rux-slider>
+                        </div>
+                        <div>
+                            <rux-tab-panels aria-labelledby="tab-set-id-2">
+                                <rux-tab-panel aria-labelledby="tab-id-4">
+                                    <rux-table>
+                                        <rux-table-header>
+                                            <rux-table-header-row>
+                                                <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                                <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                                <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                                <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                            </rux-table-header-row>
+                                        </rux-table-header>
+                                        <rux-table-body>
+                                            <rux-table-row>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                            </rux-table-row>
+                                            <rux-table-row>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                            </rux-table-row>
+                                            <rux-table-row>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                            </rux-table-row>
+                                            <rux-table-row>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                                <rux-table-cell>Table text</rux-table-cell>
+                                            </rux-table-row>
+                                        </rux-table-body>
+                                    </rux-table>
+                                </rux-tab-panel>
+                                <rux-tab-panel aria-labelledby="tab-id-5">
+                                    <div style="padding: 1.25rem;">
+                     Tab 2 HTML content
+                    </div>
+                                </rux-tab-panel>
+                                <rux-tab-panel aria-labelledby="tab-id-6">Tab 3 HTML content</rux-tab-panel>
+                            </rux-tab-panels>
+                        </div>
+                        <div slot="footer">
+                            <rux-button style="width: 100%;">Primary Button</rux-button>
+                        </div>
+                    </rux-container>
+                </li>
+                <li class="full">
+                    <rux-global-status-bar include-icon="true" app-state="Production" app-state-color="tag1" username="Joan Smith" app-domain="Astro" app-name="Dashboard" app-version="4.0 Alpha" menu-icon="apps">
+                        <rux-clock></rux-clock>
+                        <rux-button slot="right-side">Emergency shut off</rux-button>
+                    </rux-global-status-bar>
+                </li>
+                <li>
+                    <rux-indeterminate-progress></rux-indeterminate-progress>
+                </li>
+                <li>
+                    <rux-monitoring-icon icon="altitude" label="Monitoring" status="normal" notifications="1" sublabel=""></rux-monitoring-icon>
+                </li>
+                <li>
+                    <rux-monitoring-progress-icon progress="50" label="Progress"></rux-monitoring-progress-icon>
+                </li>
+                <li class="full">
+                    <rux-notification open="" status="standby" message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
+                </li>
+                <li>
+                    <rux-progress value="1"></rux-progress>
+                </li>
+                <li>
+                    <rux-push-button label="Push Button"></rux-push-button>
+                </li>
+                <li>
+                    <ul class="grid">
+                        <li>
+                            <rux-status status="off"></rux-status>
+                        </li>
+                        <li>
+                            <rux-status status="standby"></rux-status>
+                        </li>
+                        <li>
+                            <rux-status status="normal"></rux-status>
+                        </li>
+                        <li>
+                            <rux-status status="caution"></rux-status>
+                        </li>
+                        <li>
+                            <rux-status status="serious"></rux-status>
+                        </li>
+                        <li>
+                            <rux-status status="critical"></rux-status>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <rux-switch label="" name="" value=""></rux-switch>
+                </li>
+                <li>
+                    <rux-tabs id="tab-set-id-1">
+                        <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+                        <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+                        <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+                    </rux-tabs>
+
+                    <rux-tab-panels aria-labelledby="tab-set-id-1">
+                        <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML content</rux-tab-panel>
+                        <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML content</rux-tab-panel>
+                        <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML content</rux-tab-panel>
+                    </rux-tab-panels>
+                </li>
+
+                <li>
+                    <rux-tag status="pass"></rux-tag>
+                </li>
+                <li>
+                    <rux-tag status="fail"></rux-tag>
+                </li>
+                <li>
+                    <rux-tag status="unknown"></rux-tag>
+                </li>
+
+                <li>
+                    <rux-tree>
+                        <rux-tree-node>
+                            <rux-status slot="prefix" status="normal"></rux-status>
+                            <!--?lit$073766156$-->Tree item 1 <!--?lit$073766156$-->
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="normal"></rux-status>
+                                <!--?lit$073766156$-->Tree item 1.1 <!--?lit$073766156$--></rux-tree-node>
+
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="normal"></rux-status>
+                                <!--?lit$073766156$-->Tree item 1.2 <!--?lit$073766156$--></rux-tree-node>
+
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="normal"></rux-status>
+                                <!--?lit$073766156$-->Tree item 1.3 <!--?lit$073766156$--></rux-tree-node>
+
+                        </rux-tree-node>
+
+                        <rux-tree-node>
+                            <rux-status slot="prefix" status="standby"></rux-status>
+                            <!--?lit$073766156$-->Tree item 2 <!--?lit$073766156$--></rux-tree-node>
+
+                        <rux-tree-node>
+                            <rux-status slot="prefix" status="normal"></rux-status>
+                            <!--?lit$073766156$-->Tree item 3 <!--?lit$073766156$-->
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="off"></rux-status>
+                                <!--?lit$073766156$-->Tree item 3.1 <!--?lit$073766156$--></rux-tree-node>
+
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="critical"></rux-status>
+                                <!--?lit$073766156$-->Tree item 3.2 <!--?lit$073766156$--></rux-tree-node>
+
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="normal"></rux-status>
+                                <!--?lit$073766156$-->Tree item 3.3 <!--?lit$073766156$--></rux-tree-node>
+
+                        </rux-tree-node>
+
+                        <rux-tree-node>
+                            <rux-status slot="prefix" status="caution"></rux-status>
+                            <!--?lit$073766156$-->Tree item 4 <!--?lit$073766156$-->
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="caution"></rux-status>
+                                <!--?lit$073766156$-->Tree item 4.1 <!--?lit$073766156$--></rux-tree-node>
+
+                            <rux-tree-node slot="node">
+                                <rux-status slot="prefix" status="normal"></rux-status>
+                                <!--?lit$073766156$-->Tree item 4.2 <!--?lit$073766156$--></rux-tree-node>
+
+                        </rux-tree-node>
+
+                    </rux-tree>
+                </li>
+                <li>
+                    <rux-checkbox-group name="checkboxes" label="Checkbox group">
+                        <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+                        <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+                        <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+                    </rux-checkbox-group>
+                </li>
+
+                <li>
+                    <rux-input label="Text Input" type="text" placeholder="Text input"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Number Input" type="number" placeholder="1"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Phone Input" type="tel" placeholder="(999) 999-9999"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Password Input" type="password" placeholder="Reindeer Flotilla"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Web address" type="url" placeholder="http://example.com"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Email" type="email" placeholder="user@example.com"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Search" type="search" placeholder="Enter search term"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Date" type="date"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Datetime-local" type="datetime-local"></rux-input>
+                </li>
+                <li>
+                    <rux-input label="Time" type="time"></rux-input>
+                </li>
+                <li>
+                    <rux-radio-group name="radios" label="Radio group">
+                        <rux-radio value="one" name="radios">One</rux-radio>
+                        <rux-radio value="two" name="radios">Two</rux-radio>
+                        <rux-radio value="three" name="radios">Three</rux-radio>
+                    </rux-radio-group>
+                </li>
+            </ul>
+
+        </body>
+
 </html>
