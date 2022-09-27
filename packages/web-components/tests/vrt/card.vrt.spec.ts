@@ -4,18 +4,17 @@ import { startTestEnv, setBodyContent } from '../utils/_startTestEnv'
 test.describe('Card', () => {
     startTestEnv()
 
-   
-	test('card', async ({ page }) => {
+    test('card', async ({ page }) => {
         await setBodyContent(
             page,
             `
 				<rux-card>Hello</rux-card>
 			`
         )
-		await expect(page).toHaveScreenshot()
+        await expect(page).toHaveScreenshot()
     })
 
-	test('card with header', async ({ page }) => {
+    test('card with header', async ({ page }) => {
         await setBodyContent(
             page,
             `
@@ -25,10 +24,10 @@ test.describe('Card', () => {
 				</rux-card>
 			`
         )
-		await expect(page).toHaveScreenshot()
+        await expect(page).toHaveScreenshot()
     })
 
-	test('card with footer', async ({ page }) => {
+    test('card with footer', async ({ page }) => {
         await setBodyContent(
             page,
             `
@@ -38,9 +37,18 @@ test.describe('Card', () => {
 				</rux-card>
 			`
         )
-		await expect(page).toHaveScreenshot()
+        await expect(page).toHaveScreenshot()
     })
 
-
-
+    test('card without padding', async ({ page }) => {
+        await setBodyContent(
+            page,
+            `
+				<rux-card style="--body-padding: 0;">
+					Hello
+				</rux-card>
+			`
+        )
+        await expect(page).toHaveScreenshot()
+    })
 })
